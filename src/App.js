@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Profile from './Profile/Profile';
+import Child from './Profile/handlename';
+import Image from './Profile/image';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const user={
+    fullname:"Boussaadia Ahmed",
+    bio:"web dev ftw",
+    profession:"web developer",
+  }
+  function handlename(fullname="user") {
+    alert(fullname);
+    console.log('aaaa')
+  }
+  return ( 
+    <div  className="App">
+    <div><Child handlename={handlename(user.fullname)} /></div>
+    <div> <Image>data:image/png;base64,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</Image></div>
+     <div><Profile fullname={user.fullname} bio={user.bio} profession={user.profession}/></div>
+    </div> 
   );
 }
 
